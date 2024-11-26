@@ -274,6 +274,12 @@ params:
     #   messageRows: 5
 
   footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Recent Posts
+      enable: true
+      disableFeaturedImage: false
     socialNetworks:
       github: https://github.com/MohamedAYassin
       linkedin: https://www.linkedin.com/in/mohamed-yassin-45825a22a/
