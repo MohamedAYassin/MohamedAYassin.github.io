@@ -173,12 +173,12 @@ params:
       - job: "Server Manager"
         company: "PeerLink"
         companyUrl: "https://peerlink.live"
-        date: "Oct 2024 - present"
+        date: "Oct 2024 - Dec 2024"
         featuredLink:
           enable: true
           name: "View the project"
           url: "https://peerlink.live"
-        content: "I am currently owning & managing a file-sharing service, PeerLink, which serves over 50 users monthly. My role involves developing and maintaining scalable, user-friendly systems to ensure seamless file sharing and collaboration for our growing user base."
+        content: "Owned & managed a file-sharing service, PeerLink, which serves over 50 users monthly. My role involved developing and maintaining scalable, user-friendly systems to ensure seamless file sharing and collaboration for a growing user base."
 
       
   # Education
