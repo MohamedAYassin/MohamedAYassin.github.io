@@ -132,7 +132,7 @@ params:
       enable: false
     # roundImage: true # Make hero image circular | default false
     button:
-      enable: true
+      enable: false
       name: "Resume"
       url: resume.pdf
       download: true
@@ -245,6 +245,23 @@ params:
         links:
           - icon: fab fa-github
             url: https://github.com/MohamedAYassin/PeerLink
+
+      - title: TurboNodeIO
+        content: A high-performance native C++ addon for Node.js that accelerates file I/O and SIMD operations. This Proof of Concept demonstrates significant performance gains using memory-mapped I/O (mmap) and AVX2 SIMD instructions, achieving up to 317x faster file reads and 71x faster checksum calculations compared to standard JavaScript implementations.
+        image: /images/post.jpg
+        featured:
+          name: View
+          link: https://github.com/MohamedAYassin/TurboNodeIO
+        badges:
+          - "C++"
+          - "Node.js"
+          - "TypeScript"
+          - "SIMD"
+          - "Performance"
+          - "Native Addon"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/MohamedAYassin/TurboNodeIO
 
       - title: GUI Shell
         content: A Multi-Client GUI Remote Access Tool (RAT) Developed with Sockets.
