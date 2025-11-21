@@ -1,5 +1,5 @@
 ---
-title: "Hello, STUNned to meet you!"
+title: "Hello, STUNned to meet you! (Deprecated)"
 date: 2024-11-26
 draft: false
 author: "Mohamed"
@@ -7,14 +7,17 @@ tags:
   - Networking
   - Sockets
   - Peering
+  - Deprecated
 image: /images/post.jpg
-description: "A deep dive into building a modern P2P file transfer service with real-time connection monitoring"
+description: "[DEPRECATED] This post describes an older version of PeerLink. See the latest blog post for the current distributed file sharing platform."
 toc: 
 ---
 
 # Hello, STUNned to meet you
 
-So, here's the deal: file-sharing. It’s everywhere. From memes to work docs, we share files like it’s nobody’s business. But when you need something secure, fast, and private? Well, that’s a bit trickier. Today, I’m going to walk you through how I built **Peer Link**, a WebRTC-powered file transfer service that prioritizes privacy, speed, and reliability. Let’s dive in, shall we?
+> **⚠️ DEPRECATED:** This post describes an older version of PeerLink that is no longer in use. The current version uses a completely different distributed systems architecture. See the [latest blog post](/blogs/building-peerlink) for information about the current implementation.
+
+So, here's the deal: file-sharing. It's everywhere. From memes to work docs, we share files like it's nobody's business. But when you need something secure, fast, and private? Well, that's a bit trickier. Today, I'm going to walk you through how I built **Peer Link**, a WebRTC-powered file transfer service that prioritizes privacy, speed, and reliability. Let's dive in, shall we?
 
 ---
 
@@ -266,10 +269,14 @@ This concludes our deep dive into the making of **Peer Link**. By leveraging Web
 
 --- 
 
-## Now that you know how it works,
+---
 
- See how it is built:
+## ⚠️ Deprecated Notice
 
-## *[Site's Source Code!!!1!! (for free)(no virus!!!)](https://github.com/MohamedAYassin/PeerLink)*.
+**This blog post describes an older, deprecated version of PeerLink that is no longer in use.** The architecture and implementation described here have been completely replaced with a new distributed systems approach.
+
+For information about the current version of PeerLink, please see the latest blog post: **[Building PeerLink: A Journey into Distributed File Sharing](/blogs/building-peerlink)**.
+
+The old WebRTC-based implementation described in this post is no longer maintained or available.
 
 ---
