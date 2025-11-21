@@ -180,9 +180,9 @@ params:
         companyUrl: ""
         date: "Sep 2025 – Nov 2025"
         featuredLink:
-          enable: false
-          name: ""
-          url: ""
+          enable: true
+          name: "View on GitHub"
+          url: "https://github.com/MohamedAYassin/PeerLink"
         content: "Built the backend core for the Egyptian Heritage Satellite Atlas platform. Worked closely with the frontend team, implementing UI and map features in TypeScript + React. Integrated satellite data workflows using Google Earth Engine and spatial data services. Developed role-based access control and dataset management modules."
       - job: "Webmaster"
         company: "Cyber-Charm"
@@ -193,6 +193,15 @@ params:
           name: "Visit website"
           url: "https://cyber-charm.net"
         content: "Managing and maintaining the Cyber-Charm website, ensuring optimal performance, security, and user experience."
+      - job: "Server Manager"
+        company: "PeerLink"
+        companyUrl: "https://peerlink.live"
+        date: "Oct 2024 - Dec 2024"
+        featuredLink:
+          enable: true
+          name: "View on GitHub"
+          url: "https://github.com/MohamedAYassin/PeerLink"
+        content: "Owned & managed a file-sharing service, PeerLink, which served over 50 users monthly. My role involved developing and maintaining scalable, user-friendly systems to ensure seamless file sharing and collaboration for a growing user base."
 
   # Education
   education:
