@@ -132,7 +132,7 @@ params:
       enable: false
     # roundImage: true # Make hero image circular | default false
     button:
-      enable: false
+      enable: true
       name: "Resume"
       url: resume.pdf
       download: true
@@ -245,6 +245,25 @@ params:
         links:
           - icon: fab fa-github
             url: https://github.com/MohamedAYassin/PeerLink
+
+      - title: ZeroDown
+        content: A robust, zero-downtime Blue-Green deployment system for Kubernetes, featuring automated health checks, instant rollbacks, and seamless traffic switching. This proof-of-concept demonstrates production-ready deployment strategies with horizontal pod autoscaling, containerization, and infrastructure-as-code practices.
+        image: https://github.com/MohamedAYassin/ZeroDown/raw/main/showcase/blue_green_architecture.png
+        featured:
+          name: View
+          link: https://github.com/MohamedAYassin/ZeroDown
+        badges:
+          - "Kubernetes"
+          - "Docker"
+          - "TypeScript"
+          - "Node.js"
+          - "DevOps"
+          - "Blue-Green Deployment"
+          - "HPA"
+          - "CI/CD"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/MohamedAYassin/ZeroDown
 
       - title: TurboNodeIO
         content: A high-performance native C++ addon for Node.js that accelerates file I/O and SIMD operations. This Proof of Concept demonstrates significant performance gains using memory-mapped I/O (mmap) and AVX2 SIMD instructions, achieving up to 317x faster file reads and 71x faster checksum calculations compared to standard JavaScript implementations.
