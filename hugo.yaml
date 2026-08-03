@@ -69,10 +69,10 @@ params:
   mathjax: false
 
   # Whether the fade animations on the home page will be enabled
-  animate: true
+  animate: false
 
   theme:
-    # disableThemeToggle: true
+    disableThemeToggle: true
     defaultTheme: "dark" # dark
 
   font:
@@ -111,7 +111,7 @@ params:
     # searchPlaceholder: "Search"
     stickyNavBar:
       enable: true
-      showOnScrollUp: true
+      showOnScrollUp: false
     enableSeparator: true
     menus:
       disableAbout: false
@@ -127,6 +127,7 @@ params:
     intro: "Hi, my name is"
     title: "Mohamed Yassin."
     subtitle: "I build software & manage systems"
+    content: "I specialize in engineering scalable cloud-native platforms, automating DevOps pipelines, and developing high-performance backend infrastructure."
     image: https://media1.tenor.com/m/4EElxXeHiZwAAAAd/forrest-gump-wave.gif
     bottomImage:
       enable: false

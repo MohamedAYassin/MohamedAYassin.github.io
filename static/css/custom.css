@@ -1,0 +1,426 @@
+/* Custom Stylesheet - Modern Premium Aesthetic */
+
+/* ─── 0. Kill every grey layer ──────────────────────────────────────────── */
+/* theme.css forces #18191a on html/body — override it to pure transparent   */
+html, body {
+    background-color: transparent !important;
+}
+
+/* Override CSS vars that drive section backgrounds to transparent — but NOT
+   primary-color / secondary-color as those are also used for text/borders */
+body.dark {
+    --background-color: transparent !important;
+    --background-color-dark: transparent !important;
+    --secondary-background-color: transparent !important;
+    --secondary-background-color-dark: transparent !important;
+}
+body:not(.dark) {
+    --background-color: transparent !important;
+    --secondary-background-color: transparent !important;
+}
+
+/* Nuke .light > * which also applies background-color from a var */
+.light > * {
+    background-color: transparent !important;
+}
+
+/* Force every section to be fully transparent */
+section,
+#hero,
+#about,
+#skills,
+#experience,
+#education,
+#achievements,
+#projects,
+#publications,
+#contact,
+#blog {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* 1. Reset aggressive theme backgrounds & layout containers */
+html {
+    background-color: #000000 !important;
+}
+
+html:has(body:not(.dark)) {
+    background-color: #f3f5f9 !important;
+}
+
+body.dark {
+    background-color: transparent !important;
+    background-image: none !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    overscroll-behavior: auto !important;
+}
+
+body:not(.dark) {
+    background-color: transparent !important;
+    background-image: none !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    overscroll-behavior: auto !important;
+}
+
+#content, main, #single, section, .container, .row {
+    background-color: transparent !important;
+}
+
+body.light > #content,
+body.dark > #content,
+body > #content,
+body.light > footer,
+body.dark > footer,
+body > footer {
+    background-color: transparent !important;
+}
+
+section {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+}
+
+/* Redefine theme scroll/fade-in keyframes to be static — prevents all pop-ins */
+@keyframes fade-in    { 0%, 100% { opacity: 1; } }
+@keyframes fade-bottom{ 0%, 100% { transform: translateY(0); opacity: 1; } }
+@keyframes fade-left  { 0%, 100% { transform: translateX(0); opacity: 1; } }
+@keyframes fade-right { 0%, 100% { transform: translateX(0); opacity: 1; } }
+@keyframes fade-up    { 0%, 100% { transform: translateY(0); opacity: 1; } }
+
+/* ─── 2. CSS-Only Lava Lamp Background ──────────────────────────────────── */
+/* The blur is applied ONCE on .blob-field (static, no repaint).             */
+/* Only transform: translate3d() animates — pure GPU compositor thread only. */
+
+#dynamic-bg-container {
+    position: fixed;
+    inset: 0;
+    z-index: -100;
+    pointer-events: none;
+    overflow: hidden;
+    /* Own compositor layer so scroll never touches this element */
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Single static blur on the field — applied once, never recalculated */
+.blob-field {
+    position: absolute;
+    inset: 0;
+    filter: blur(80px);         /* One-time static blur — zero per-frame cost */
+}
+
+body.dark .blob-field  { opacity: 0.18; }
+body:not(.dark) .blob-field { opacity: 0.06; }
+
+/* Individual blobs — solid circles, only transform animates */
+.blob {
+    position: absolute;
+    left: var(--x);
+    top:  var(--y);
+    width:  var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    will-change: transform;
+    /* animation assigned per-blob below */
+}
+
+body.dark .blob { background: #ffffff; }
+body:not(.dark) .blob { background: #000000; }
+
+/* 8 completely different random paths — only transform, zero repaint cost */
+.blob[data-b="1"] { animation: bd1 var(--speed) var(--delay) infinite ease-in-out alternate; }
+.blob[data-b="2"] { animation: bd2 var(--speed) var(--delay) infinite ease-in-out alternate; }
+.blob[data-b="3"] { animation: bd3 var(--speed) var(--delay) infinite ease-in-out alternate; }
+.blob[data-b="4"] { animation: bd4 var(--speed) var(--delay) infinite ease-in-out alternate; }
+.blob[data-b="5"] { animation: bd5 var(--speed) var(--delay) infinite ease-in-out alternate; }
+.blob[data-b="6"] { animation: bd6 var(--speed) var(--delay) infinite ease-in-out alternate; }
+.blob[data-b="7"] { animation: bd7 var(--speed) var(--delay) infinite ease-in-out alternate; }
+.blob[data-b="8"] { animation: bd8 var(--speed) var(--delay) infinite ease-in-out alternate; }
+
+@keyframes bd1 {
+    0%   { transform: translate3d(0,    0,    0) scale(1);    }
+    20%  { transform: translate3d(120px,-90px, 0) scale(1.1); }
+    45%  { transform: translate3d(-80px,-200px,0) scale(0.9); }
+    70%  { transform: translate3d(200px,-110px,0) scale(1.2); }
+    100% { transform: translate3d(-50px,-160px,0) scale(1);   }
+}
+@keyframes bd2 {
+    0%   { transform: translate3d(0,    0,    0) scale(1);    }
+    25%  { transform: translate3d(-150px,-60px,0) scale(1.15);}
+    55%  { transform: translate3d(90px,-180px, 0) scale(0.85);}
+    80%  { transform: translate3d(-60px,-130px,0) scale(1.1); }
+    100% { transform: translate3d(130px,-80px, 0) scale(0.95);}
+}
+@keyframes bd3 {
+    0%   { transform: translate3d(0,    0,    0) scale(1);    }
+    30%  { transform: translate3d(70px, -150px,0) scale(0.9); }
+    60%  { transform: translate3d(-120px,-50px,0) scale(1.2); }
+    85%  { transform: translate3d(40px, -220px,0) scale(1.05);}
+    100% { transform: translate3d(-90px,-100px,0) scale(0.9); }
+}
+@keyframes bd4 {
+    0%   { transform: translate3d(0,    0,    0) scale(1);    }
+    15%  { transform: translate3d(180px,-40px, 0) scale(1.1); }
+    40%  { transform: translate3d(-30px,-190px,0) scale(0.85);}
+    65%  { transform: translate3d(100px,-120px,0) scale(1.15);}
+    100% { transform: translate3d(-60px,-70px, 0) scale(1);   }
+}
+@keyframes bd5 {
+    0%   { transform: translate3d(0,    0,    0) scale(1);    }
+    35%  { transform: translate3d(-110px,-130px,0) scale(1.2);}
+    60%  { transform: translate3d(60px,-80px,  0) scale(0.9); }
+    80%  { transform: translate3d(-170px,-40px,0) scale(1.05);}
+    100% { transform: translate3d(80px, -200px,0) scale(0.95);}
+}
+@keyframes bd6 {
+    0%   { transform: translate3d(0,    0,    0) scale(1);    }
+    20%  { transform: translate3d(-90px, 60px, 0) scale(1.1); }
+    50%  { transform: translate3d(150px, 100px,0) scale(0.85);}
+    75%  { transform: translate3d(-40px, 200px,0) scale(1.2); }
+    100% { transform: translate3d(110px, 80px, 0) scale(0.95);}
+}
+@keyframes bd7 {
+    0%   { transform: translate3d(0,    0,    0) scale(1);    }
+    30%  { transform: translate3d(80px, 180px, 0) scale(0.9); }
+    55%  { transform: translate3d(-130px,90px, 0) scale(1.15);}
+    80%  { transform: translate3d(50px, 250px, 0) scale(1);   }
+    100% { transform: translate3d(-80px,130px, 0) scale(1.1); }
+}
+@keyframes bd8 {
+    0%   { transform: translate3d(0,    0,    0) scale(1);    }
+    25%  { transform: translate3d(-60px, 120px,0) scale(1.2); }
+    50%  { transform: translate3d(170px, 50px, 0) scale(0.9); }
+    75%  { transform: translate3d(-100px,200px,0) scale(1.05);}
+    100% { transform: translate3d(90px,  160px,0) scale(0.95);}
+}
+
+
+/* ─── 3. Navigation Bar ──────────────────────────────────────────────────── */
+header .navbar, .showHeaderOnTop {
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+body.dark header .navbar, body.dark .showHeaderOnTop {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+body:not(.dark) header .navbar, body:not(.dark) .showHeaderOnTop {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* ─── 4. Cards — Smoked Glass (Zero-cost, no backdrop-filter) ────────────── */
+body.dark #projects .card,
+body.dark #education .card,
+body.dark #achievements .card,
+body.dark #experience .experience-container,
+body.dark footer .card {
+    background: linear-gradient(135deg, rgba(20,20,20,0.75) 0%, rgba(10,10,10,0.6) 100%) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 8px 32px 0 rgba(0,0,0,0.5) !important;
+    border-radius: 1.25rem !important;
+    transition: transform 0.4s cubic-bezier(0.165,0.84,0.44,1),
+                box-shadow 0.4s cubic-bezier(0.165,0.84,0.44,1),
+                border-color 0.4s ease !important;
+}
+
+body:not(.dark) #projects .card,
+body:not(.dark) #education .card,
+body:not(.dark) #achievements .card,
+body:not(.dark) #experience .experience-container,
+body:not(.dark) footer .card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 100%) !important;
+    border: 1px solid rgba(0,0,0,0.08) !important;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.04) !important;
+    border-radius: 1.25rem !important;
+    transition: transform 0.4s cubic-bezier(0.165,0.84,0.44,1),
+                box-shadow 0.4s cubic-bezier(0.165,0.84,0.44,1),
+                border-color 0.4s ease !important;
+}
+
+#education .card *:not(.badge):not(.btn),
+#projects .card *:not(.badge):not(.btn),
+#achievements .card *:not(.badge):not(.btn),
+#experience .experience-container *:not(.badge):not(.btn),
+footer .card *:not(.badge):not(.btn) {
+    background-color: transparent !important;
+}
+
+body.dark #projects .card:hover,
+body.dark #education .card:hover,
+body.dark #achievements .card:hover,
+body.dark #experience .experience-container:hover,
+body.dark footer .card:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(255,255,255,0.2) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 12px 40px 0 rgba(255,255,255,0.08) !important;
+}
+
+body:not(.dark) #projects .card:hover,
+body:not(.dark) #education .card:hover,
+body:not(.dark) #achievements .card:hover,
+body:not(.dark) #experience .experience-container:hover,
+body:not(.dark) footer .card:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(0,0,0,0.15) !important;
+    box-shadow: 0 12px 40px 0 rgba(0,0,0,0.06) !important;
+}
+
+#projects .card {
+    min-height: 410px;
+    border: none !important;
+}
+
+/* ─── 5. Badges ──────────────────────────────────────────────────────────── */
+.badge, span.badge {
+    border-radius: 2rem !important;
+    font-weight: 500 !important;
+    padding: 0.35rem 0.75rem !important;
+    transition: all 0.3s ease !important;
+}
+
+body.dark .badge, body.dark span.badge {
+    background-color: rgba(255,255,255,0.06) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+}
+
+body:not(.dark) .badge, body:not(.dark) span.badge {
+    background-color: rgba(0,0,0,0.04) !important;
+    color: #1e293b !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+body.dark .badge:hover, body.dark span.badge:hover {
+    background-color: rgba(255,255,255,0.12) !important;
+    box-shadow: 0 0 12px rgba(255,255,255,0.15) !important;
+}
+
+body:not(.dark) .badge:hover, body:not(.dark) span.badge:hover {
+    background-color: rgba(0,0,0,0.08) !important;
+    box-shadow: 0 0 12px rgba(0,0,0,0.08) !important;
+}
+
+/* ─── 6. Buttons ─────────────────────────────────────────────────────────── */
+.btn {
+    border-radius: 0.75rem !important;
+    font-weight: 500 !important;
+    transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1) !important;
+}
+
+body.dark .btn {
+    background-color: rgba(255,255,255,0.03) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+body.dark .btn:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: 0 0 15px rgba(255,255,255,0.3) !important;
+}
+
+body:not(.dark) .btn {
+    background-color: rgba(0,0,0,0.03) !important;
+    color: #1e293b !important;
+    border: 1px solid rgba(0,0,0,0.15) !important;
+}
+
+body:not(.dark) .btn:hover {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(30,41,59,0.2) !important;
+}
+
+/* ─── 7. Hero Typography ─────────────────────────────────────────────────── */
+#hero h2 {
+    background: linear-gradient(135deg, #ffffff 50%, #cfd5e2 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px;
+}
+
+body:not(.dark) #hero h2 {
+    background: linear-gradient(135deg, #1e293b 50%, #475569 100%) !important;
+}
+
+#hero h3 {
+    background: linear-gradient(135deg, #94a3b8 20%, #64748b 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 700 !important;
+}
+
+body:not(.dark) #hero h3 {
+    background: linear-gradient(135deg, #475569 20%, #334155 100%) !important;
+}
+
+body.dark #hero .hero-content .subtitle { color: #ffffff !important; }
+body:not(.dark) #hero .hero-content .subtitle { color: #1e293b !important; }
+
+/* ─── 8. Experience Tabs ─────────────────────────────────────────────────── */
+#experience .nav-item .nav-link {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.3s ease !important;
+}
+
+body.dark #experience .nav-item .nav-link.active {
+    color: #ffffff !important;
+    border-bottom: 2px solid #ffffff !important;
+}
+
+body:not(.dark) #experience .nav-item .nav-link.active {
+    color: #1e293b !important;
+    border-bottom: 2px solid #1e293b !important;
+}
+
+/* ─── 9. Custom Scrollbar ────────────────────────────────────────────────── */
+body::-webkit-scrollbar { width: 10px; background-color: transparent; }
+::-webkit-scrollbar-track { background-color: transparent; }
+
+body.dark ::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    border: 3px solid #000000;
+}
+
+body:not(.dark) ::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.15);
+    border-radius: 10px;
+    border: 3px solid #f6f8fc;
+}
+
+body.dark ::-webkit-scrollbar-thumb:hover  { background: rgba(255,255,255,0.4); }
+body:not(.dark) ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.4); }
+
+/* ─── 10. Hero Layout ────────────────────────────────────────────────────── */
+#hero {
+    min-height: 85vh !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+#hero .container {
+    display: flex !important;
+    align-items: center !important;
+    height: auto !important;
+}
+
+#hero .row {
+    width: 100% !important;
+    align-items: center !important;
+    margin: 0 !important;
+}
