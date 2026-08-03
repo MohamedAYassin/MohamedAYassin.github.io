@@ -143,32 +143,33 @@ params:
           url: https://github.com/MohamedAYassin/
         - icon: fab fa-linkedin
           url: https://www.linkedin.com/in/moinator/
-      customIcons:
-        - icon: /fav.png
-          url: "https://yassin.dev"
 
   # About
   about:
     enable: true
     title: "About Me"
     content: |-
-      Fourth-year CS student skilled in Linux administration, networking, and backend development using Node.js and TypeScript (clean architecture, SOLID). Strong foundation in C++ and algorithms. Experience with microservices clustering and Redis. Basic Python. Learning CI/CD with Jenkins and Docker, with a view to DevOps.
+      Cloud-native DevOps Engineer and Backend Developer with a strong track record of building and operating production services. Highly skilled in Linux, Docker, Kubernetes, and GCP. Proven ability to automate deployments via CI/CD (GitHub Actions, Jenkins), engineer scalable infrastructure, and troubleshoot distributed systems. Active competitive programmer with deep interests in cybersecurity, system design, and observability.
     skills:
       enable: true
       title: "Here are a few technologies I've been working with recently:"
       items:
         - "C++"
-        - "Java"
-        - "Python"
-        - "React"
         - "TypeScript"
+        - "JavaScript"
+        - "Python"
+        - "Bash"
         - "Node.js"
-        - "Linux"
         - "Docker"
         - "Kubernetes"
+        - "GCP"
+        - "GitHub Actions"
         - "Jenkins"
-        - "Git"
+        - "Linux"
         - "Nginx"
+        - "PostgreSQL"
+        - "Redis"
+        - "Git"
 
   # Experience
   experience:
@@ -209,11 +210,12 @@ params:
     # title: "Custom Name"
     index: false
     items:
-      - title: "Bachelor's in Computer Science"
+      - title: "B.Sc. in Computer Science"
         school:
           name: "Modern Academy, Cairo, Egypt"
           url: "https://modern-academy.edu.eg"
-        date: "Sept 2022 - Present"
+        date: "Sept 2022 – June 2026"
+        GPA: "3.29 (B+)"
 
   # Achievements
   achievements:
@@ -267,7 +269,7 @@ params:
 
       - title: TurboNodeIO
         content: A high-performance native C++ addon for Node.js that accelerates file I/O and SIMD operations. This Proof of Concept demonstrates significant performance gains using memory-mapped I/O (mmap) and AVX2 SIMD instructions, achieving up to 317x faster file reads and 71x faster checksum calculations compared to standard JavaScript implementations.
-        image: /images/post.jpg
+        image: /images/turbonodeio-logo.svg
         featured:
           name: View
           link: https://github.com/MohamedAYassin/TurboNodeIO
@@ -301,16 +303,22 @@ params:
           - icon: fab fa-github
             url: https://github.com/MohamedAYassin/ZeroDown
 
-      - title: GUI Shell
-        content: A Multi-Client GUI Remote Access Tool (RAT) Developed with Sockets.
-        image: https://github.com/MohamedAYassin/GUIShell/raw/main/Screenshots/menu.png?raw=true
+      - title: GUIShell
+        content: A clean, low-latency Remote Desktop boilerplate built with Electron and WebRTC. Provides real-time signaling, peer-to-peer screen streaming, and remote input simulation as a stripped-to-the-bones starting point for building remote control and screen-sharing tools. Uses Supabase for session data and auth, Koyeb for the signaling server, and ships with electron-builder auto-updates via GitHub Releases.
+        image: /images/guishell-logo.svg
         featured:
           name: View
           link: https://github.com/MohamedAYassin/GUIShell
         badges:
-          - "Python"
-          - "RAT"
-          - "Reverse-Shell"
+          - "Electron"
+          - "WebRTC"
+          - "JavaScript"
+          - "Node.js"
+          - "Supabase"
+          - "Koyeb"
+          - "Signaling Server"
+          - "Remote Desktop"
+          - "Docker"
         links:
           - icon: fab fa-github
             url: https://github.com/MohamedAYassin/GUIShell

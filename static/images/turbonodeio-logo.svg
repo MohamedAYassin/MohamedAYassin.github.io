@@ -1,0 +1,23 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1b263b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bolt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd166;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fca311;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect x="64" y="64" width="896" height="896" rx="160" fill="url(#bg)" stroke="#415a77" stroke-width="20" />
+
+  <path d="M572 148 L300 566 H460 L420 876 L724 444 H552 Z" fill="url(#bolt)" filter="url(#glow)" />
+
+  <path d="M240 780 Q512 872 784 780" fill="none" stroke="#778da9" stroke-width="28" stroke-linecap="round" />
+  <path d="M572 148 L620 220" stroke="#ffd166" stroke-width="24" stroke-linecap="round" />
+</svg>
