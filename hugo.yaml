@@ -213,10 +213,13 @@ params:
     items:
       - title: "B.Sc. in Computer Science"
         school:
-          name: "Modern Academy, Cairo, Egypt"
+          name: "Modern Academy"
           url: "https://modern-academy.edu.eg"
-        date: "Sept 2022 – June 2026"
-        GPA: "3.29 (B+)"
+        date: "Sept 2022 – May 2026"
+        content: |
+          - Cumulative Grade: Excellent (A-) with Second-Class Honors (GPA: 3.29 | 89.76%)
+          - Graduation Project: Excellent (A+)
+          - Project Details: Built an "Amazon Go" style fully autonomous checkout system. Engineered and deployed the core AI model, featuring zero-shot product identification via text prompts (e.g., "milk carton") without requiring a custom dataset.
 
   # Achievements
   achievements:
