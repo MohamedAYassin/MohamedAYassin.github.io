@@ -182,9 +182,7 @@ params:
         companyUrl: ""
         date: "Sep 2025 – Nov 2025"
         featuredLink:
-          enable: true
-          name: "View on GitHub"
-          url: "https://github.com/MohamedAYassin/PeerLink"
+          enable: false
         content: "Built the backend core for the Egyptian Heritage Satellite Atlas platform. Worked closely with the frontend team, implementing UI and map features in TypeScript + React. Integrated satellite data workflows using Google Earth Engine and spatial data services. Developed role-based access control and dataset management modules."
       - job: "Webmaster"
         company: "Cyber-Charm"
