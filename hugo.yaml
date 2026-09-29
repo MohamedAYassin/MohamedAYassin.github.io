@@ -113,6 +113,10 @@ params:
       enable: true
       showOnScrollUp: false
     enableSeparator: true
+    mawzun:
+      enable: true
+      title: "Mawzun"
+      url: "https://mawzun.org"
     menus:
       disableAbout: false
       disableExperience: true
@@ -184,15 +188,25 @@ params:
         featuredLink:
           enable: false
         content: "Built the backend core for the Egyptian Heritage Satellite Atlas platform. Worked closely with the frontend team, implementing UI and map features in TypeScript + React. Integrated satellite data workflows using Google Earth Engine and spatial data services. Developed role-based access control and dataset management modules."
-      - job: "Webmaster"
-        company: "Cyber-Charm"
-        companyUrl: "https://cyber-charm.net"
+      - job: "Lead Architect & Software Engineer"
+        company: "Mawzun"
+        companyUrl: "https://mawzun.org"
         date: "Present"
         featuredLink:
           enable: true
-          name: "Visit website"
-          url: "https://cyber-charm.net"
-        content: "Managing and maintaining the Cyber-Charm website, ensuring optimal performance, security, and user experience."
+          name: "Visit Website"
+          url: "https://mawzun.org"
+        featuredLinks:
+          - name: "Visit Website"
+            url: "https://mawzun.org"
+            icon: "fas fa-external-link-alt"
+          - name: "View on GitHub"
+            url: "https://github.com/MohamedAYassin/Mawzun"
+            icon: "fab fa-github"
+        content: |
+          Architected a nine-service multi-tenant ERP with TypeScript, Express, Prisma, PostgreSQL, React, and Cloudflare Workers; enforced tenant isolation with PostgreSQL RLS and role separation, added Hyperdrive connection pooling, Grafana Cloud/Prometheus observability and alerting, Redis-backed rate limiting, and a bidirectional Shopify integration with HMAC webhooks, idempotency, inventory sync, product export, and retries.
+
+          Open source Arabic-first ERP for small and mid-sized businesses: sales, inventory, purchasing, production, fulfillment, shipping and accounting. The whole platform in one tree, so the architecture can be read end to end.
       - job: "Server Manager"
         company: "PeerLink"
         companyUrl: "https://peerlink.live"
@@ -232,6 +246,29 @@ params:
     enable: true
     # title: "Custom Name"
     items:
+      - title: Mawzun
+        content: Open source Arabic-first ERP for small and mid-sized businesses (sales, inventory, purchasing, production, fulfillment, shipping and accounting). Architected a nine-service multi-tenant platform with TypeScript, Express, Prisma, PostgreSQL, React, and Cloudflare Workers; enforced tenant isolation with PostgreSQL RLS and role separation, added Hyperdrive connection pooling, Grafana Cloud/Prometheus observability and alerting, Redis-backed rate limiting, and a bidirectional Shopify integration with HMAC webhooks, idempotency, inventory sync, product export, and retries. The whole platform in one tree, so the architecture can be read end to end.
+        image: /images/mawzun-logo.svg
+        featured:
+          name: Visit Website
+          link: https://mawzun.org
+        badges:
+          - "TypeScript"
+          - "Express"
+          - "Prisma"
+          - "PostgreSQL"
+          - "React"
+          - "Cloudflare Workers"
+          - "Redis"
+          - "Shopify API"
+          - "Grafana"
+          - "Multi-Tenant ERP"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/MohamedAYassin/Mawzun
+          - icon: fas fa-external-link-alt
+            url: https://mawzun.org
+
       - title: PeerLink
         content: PeerLink is a high-performance distributed file sharing platform built for scale. It uses a microservices architecture, native C++ acceleration, and real-time cluster communication to transfer data across nodes with low latency, fault tolerance, and automatic load balancing.
         image: https://raw.githubusercontent.com/MohamedAYassin/PeerLink/fad1da38a88ff2cf16af6edaa0a28623e25f9c95/frontend/public/favicon.svg

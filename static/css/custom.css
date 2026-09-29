@@ -424,3 +424,101 @@ body:not(.dark) ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.4); }
     align-items: center !important;
     margin: 0 !important;
 }
+
+/* ─── 11. Special Navbar Item: Mawzun ────────────────────────────────────── */
+.mawzun-nav-pill {
+    padding: 0.25rem 0.5rem !important;
+    display: inline-flex !important;
+    align-items: center;
+    text-decoration: none !important;
+}
+
+.mawzun-nav-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+body.dark .mawzun-nav-badge {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.14) 0%, rgba(147, 51, 234, 0.12) 100%);
+    border: 1px solid rgba(96, 165, 250, 0.4);
+    color: #ffffff !important;
+    box-shadow: 0 0 16px rgba(59, 130, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+body.dark .mawzun-nav-pill:hover .mawzun-nav-badge {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 51, 234, 0.25) 100%);
+    border-color: rgba(147, 197, 253, 0.8);
+    color: #ffffff !important;
+    box-shadow: 0 0 24px rgba(59, 130, 246, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+body:not(.dark) .mawzun-nav-badge {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(124, 58, 237, 0.06) 100%);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    color: #1e293b !important;
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.1);
+}
+
+body:not(.dark) .mawzun-nav-pill:hover .mawzun-nav-badge {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.16) 0%, rgba(124, 58, 237, 0.12) 100%);
+    border-color: rgba(37, 99, 235, 0.6);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.2);
+    transform: translateY(-2px);
+}
+
+.mawzun-nav-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #10b981;
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px #10b981;
+    animation: mawzunPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes mawzunPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+.mawzun-nav-arrow {
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    opacity: 0.75;
+}
+
+.mawzun-nav-pill:hover .mawzun-nav-arrow {
+    transform: translate(2px, -2px);
+    opacity: 1;
+}
+
+/* ─── 12. Experience Multi-Button Links ─────────────────────────────────── */
+.featuredLink {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.featuredLink .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem;
+}
+
