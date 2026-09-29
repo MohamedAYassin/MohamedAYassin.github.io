@@ -154,26 +154,69 @@ params:
     enable: true
     title: "About Me"
     content: |-
-      Cloud-native DevOps Engineer and Backend Developer with a strong track record of building and operating production services. Highly skilled in Linux, Docker, Kubernetes, and GCP. Proven ability to automate deployments via CI/CD (GitHub Actions, Jenkins), engineer scalable infrastructure, and troubleshoot distributed systems. Active competitive programmer with deep interests in cybersecurity, system design, and observability.
+      Cloud-native DevOps Engineer and Backend Developer with a strong track record of designing, building, and operating high-availability production services. Experienced across the full SDLC, specializing in distributed systems, Linux, Docker, and Kubernetes (GKE) deployments on AWS and GCP. Proven ability to automate CI/CD pipelines (GitHub Actions, Jenkins) with comprehensive testing and debugging gates.
+
+      Extensive experience architecting production **Observability with Prometheus and Grafana**—engineering metrics telemetry, dynamic dashboards, SLI/SLO tracking, and automated alerting across multi-tenant cloud platforms (as deployed in [Mawzun](https://mawzun.org)) and distributed telemetry systems (like [HoneyKube](https://github.com/MohamedAYassin/HoneyKube)). Active competitive programmer (ECPC participant, Codeforces, LeetCode) and CTF participant with a deep focus on API design, systems optimization, and resilient infrastructure.
     skills:
       enable: true
-      title: "Here are a few technologies I've been working with recently:"
+      title: "Core Technologies & Skills:"
+      groups:
+        - category: "Cloud, DevOps & Observability"
+          items:
+            - "Prometheus"
+            - "Grafana"
+            - "Kubernetes (GKE)"
+            - "Docker"
+            - "AWS (S3, EC2)"
+            - "GCP"
+            - "CI/CD (GitHub Actions, Jenkins)"
+            - "Linux"
+            - "Nginx"
+            - "Observability & Alerting"
+        - category: "Backend, APIs & Databases"
+          items:
+            - "Node.js"
+            - "TypeScript"
+            - "Express"
+            - "Prisma ORM"
+            - "PostgreSQL"
+            - "Redis (NoSQL)"
+            - "RESTful APIs"
+            - "Microservices Architecture"
+            - "System Design & Scalability"
+            - "Testing (Jest, Supertest)"
+        - category: "Languages & Core"
+          items:
+            - "TypeScript"
+            - "JavaScript"
+            - "Python"
+            - "C++"
+            - "SQL"
+            - "Bash"
+            - "Git"
       items:
-        - "C++"
-        - "TypeScript"
-        - "JavaScript"
-        - "Python"
-        - "Bash"
-        - "Node.js"
+        - "Prometheus"
+        - "Grafana"
+        - "Kubernetes (GKE)"
         - "Docker"
-        - "Kubernetes"
+        - "AWS (S3, EC2)"
         - "GCP"
         - "GitHub Actions"
         - "Jenkins"
         - "Linux"
         - "Nginx"
+        - "Node.js"
+        - "TypeScript"
+        - "Express"
+        - "Prisma ORM"
         - "PostgreSQL"
         - "Redis"
+        - "Microservices Architecture"
+        - "RESTful APIs"
+        - "Python"
+        - "C++"
+        - "SQL"
+        - "Bash"
         - "Git"
 
   # Experience

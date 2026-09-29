@@ -522,3 +522,40 @@ body:not(.dark) .mawzun-nav-pill:hover .mawzun-nav-badge {
     gap: 0.35rem;
 }
 
+/* ─── 13. Categorized Skills Groups ──────────────────────────────────────── */
+.skills-groups {
+    margin-top: 1.25rem;
+}
+
+.skill-category {
+    margin-bottom: 1.25rem;
+}
+
+.skill-category-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+body.dark .skill-category-label {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body:not(.dark) .skill-category-label {
+    color: rgba(30, 41, 59, 0.7);
+}
+
+.skill-category-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.15;
+}
+
+

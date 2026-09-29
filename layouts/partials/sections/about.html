@@ -15,11 +15,26 @@
 
                 {{ if .Site.Params.about.skills.enable }}
                 <h6 class="mt-4 mb-3">{{ .Site.Params.about.skills.title }}</h6>
+                {{ if .Site.Params.about.skills.groups }}
+                <div class="skills-groups">
+                    {{ range .Site.Params.about.skills.groups }}
+                    <div class="skill-category mb-3">
+                        <div class="skill-category-label">{{ .category }}</div>
+                        <div class="d-flex flex-wrap gap-2">
+                            {{ range .items }}
+                            <span class="badge badge-secondary px-3 py-2">{{ . | markdownify }}</span>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ else }}
                 <div class="d-flex flex-wrap gap-2">
                     {{ range .Site.Params.about.skills.items }}
                     <span class="badge badge-secondary px-3 py-2">{{ . | markdownify }}</span>
                     {{ end }}
                 </div>
+                {{ end }}
                 {{ end }}
             </div>
         </div>
