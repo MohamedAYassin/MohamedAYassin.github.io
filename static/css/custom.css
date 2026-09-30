@@ -558,4 +558,103 @@ body:not(.dark) .skill-category-label {
     opacity: 0.15;
 }
 
+/* ─── 14. RTL & Arabic Blog Post Styling ──────────────────────────────────── */
+/* Strictly scoped to .rtl-post and .rtl-content so English blogs are 100% unaffected */
+
+.rtl-post .page-content,
+.rtl-content,
+[dir="rtl"].page-content {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif !important;
+    font-size: 1.15rem;
+    line-height: 2.15 !important;
+    word-spacing: 0.03em;
+    letter-spacing: normal;
+}
+
+.rtl-post .page-content p,
+.rtl-content p {
+    text-align: right !important;
+    margin-bottom: 1.5rem !important;
+    unicode-bidi: plaintext;
+}
+
+.rtl-post .page-content li,
+.rtl-content li {
+    unicode-bidi: plaintext;
+}
+
+/* Code blocks & monospace: ALWAYS enforce LTR */
+.rtl-post .page-content pre,
+.rtl-post .page-content code,
+.rtl-content pre,
+.rtl-content code {
+    direction: ltr !important;
+    text-align: left !important;
+    unicode-bidi: isolate !important;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
+.rtl-post .page-content :not(pre) > code,
+.rtl-content :not(pre) > code {
+    display: inline-block;
+    padding: 0.15em 0.45em;
+    font-size: 0.88em;
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Blockquotes in RTL */
+.rtl-post .page-content blockquote,
+.rtl-content blockquote {
+    border-right: 4px solid var(--primary-color, #6366f1) !important;
+    border-left: none !important;
+    padding-right: 1.25rem !important;
+    padding-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: right !important;
+}
+
+/* Lists in RTL */
+.rtl-post .page-content ul,
+.rtl-post .page-content ol,
+.rtl-content ul,
+.rtl-content ol {
+    padding-right: 2rem !important;
+    padding-left: 0 !important;
+    text-align: right !important;
+}
+
+/* Headings in RTL */
+.rtl-post .page-content h1,
+.rtl-post .page-content h2,
+.rtl-post .page-content h3,
+.rtl-post .page-content h4,
+.rtl-post .page-content h5,
+.rtl-post .page-content h6,
+.rtl-content h1,
+.rtl-content h2,
+.rtl-content h3,
+.rtl-content h4,
+.rtl-content h5,
+.rtl-content h6 {
+    text-align: right !important;
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif !important;
+    font-weight: 700 !important;
+}
+
+/* Sidebar in RTL */
+.rtl-sidebar {
+    text-align: right;
+    direction: rtl;
+}
+
+.rtl-sidebar .tags-ul {
+    padding-right: 0;
+}
+
+
 
