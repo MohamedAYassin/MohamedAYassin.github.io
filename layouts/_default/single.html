@@ -17,14 +17,14 @@
 
 {{ define "main" }}
 {{ $isRTL := or .Params.rtl (eq .Params.dir "rtl") (eq .Params.lang "ar") }}
-<section id="single" class="{{ if $isRTL }}rtl-post{{ end }}">
+<section id="single" class="{{ if $isRTL }}rtl-post{{ end }}"{{ if $isRTL }} dir="rtl"{{ end }}>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-12 col-md-12 col-lg-9">
         <div class="pr-lg-4">
-          <div class="title mb-5">
-            <h1 class="text-center mb-4">{{ .Title }}</h1>
-            <div class="text-center">
+          <div class="title mb-5{{ if $isRTL }} rtl-title{{ end }}"{{ if $isRTL }} dir="rtl"{{ end }}>
+            <h1 class="text-center mb-4{{ if $isRTL }} rtl-title-h1{{ end }}"{{ if $isRTL }} dir="rtl"{{ end }}>{{ .Title }}</h1>
+            <div class="text-center"{{ if $isRTL }} dir="rtl"{{ end }}>
               {{ if .Params.author }}
                 {{ .Params.author }}
                 <small>|</small>

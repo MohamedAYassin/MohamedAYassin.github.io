@@ -1,0 +1,49 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/list.css" media="all">
+{{ end }}
+
+{{ define "title" }}
+{{.Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<div class="container pt-5" id="list-page">
+    <h2 class="text-center pb-2">{{.Title}}</h2>
+    <div class="row">
+        {{ range .Paginator.Pages }}
+        {{ $isRTL := or .Params.rtl (eq .Params.dir "rtl") (eq .Params.lang "ar") }}
+        <div class="col-lg-4 col-md-6 my-3">
+            <div class="card-columns">
+                <div class="card h-100{{ if $isRTL }} rtl-card{{ end }}"{{ if $isRTL }} dir="rtl"{{ end }}>
+                    {{ if and (not (.Site.Params.listPages.disableFeaturedImage | default false)) (.Params.image) }}
+                    <div class="card-header">
+                        <a href="{{ .RelPermalink }}">
+                            <img src="{{ .Params.image }}" class="card-img-top" alt="{{ .Title }}">
+                        </a>
+                    </div>
+                    {{ end }}
+                    <div class="card-body bg-transparent p-4 shadow-sm{{ if $isRTL }} rtl-card-body{{ end }}"{{ if $isRTL }} dir="rtl"{{ end }}>
+                        <a href="{{ .RelPermalink }}" class="primary-font card-title{{ if $isRTL }} rtl-card-title{{ end }}">
+                            <h5 class="card-title bg-transparent{{ if $isRTL }} rtl-card-title{{ end }}" title="{{ .Title }}">{{ .Title | truncate 50 }}</h5>
+                        </a>
+                        <div class="card-text secondary-font{{ if $isRTL }} rtl-card-text{{ end }}"{{ if $isRTL }} dir="rtl"{{ end }}>
+                            <p>{{ or .Description .Summary | truncate 300}}</p>
+                        </div>
+                    </div>
+                    <div class="mt-auto post-footer bg-transparent py-3{{ if $isRTL }} rtl-card-footer{{ end }}">
+                        <span class="{{ if $isRTL }}float-end{{ else }}float-start{{ end }} bg-transparent">{{ .Date.Format (.Site.Params.datesFormat.articleList | default "January 2, 2006") }}</span>
+                        <a href="{{ .RelPermalink }}" class="{{ if $isRTL }}float-start{{ else }}float-end{{ end }} btn btn-outline-info btn-sm">{{ if $isRTL }}اقرأ المقال{{ else }}{{ .Site.Params.terms.read | default "Read" }}{{ end }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        <div class="row justify-content-center">
+            <div class="col-auto m-3">
+                {{template "_internal/pagination.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -628,7 +628,36 @@ body:not(.dark) .skill-category-label {
     text-align: right !important;
 }
 
-/* Headings in RTL */
+/* Headings & Post Title in RTL */
+.rtl-post .title,
+.rtl-title {
+    direction: rtl !important;
+    text-align: center !important;
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif !important;
+    unicode-bidi: plaintext !important;
+}
+
+.rtl-post .title h1,
+.rtl-title h1,
+.rtl-title-h1,
+#single.rtl-post .title > h1,
+.rtl-post .title > h1,
+#single[dir="rtl"] .title > h1 {
+    direction: rtl !important;
+    text-align: center !important;
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    unicode-bidi: plaintext !important;
+}
+
+.rtl-post .title .text-center,
+.rtl-title .text-center {
+    direction: rtl !important;
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif !important;
+    unicode-bidi: plaintext !important;
+}
+
 .rtl-post .page-content h1,
 .rtl-post .page-content h2,
 .rtl-post .page-content h3,
@@ -655,6 +684,77 @@ body:not(.dark) .skill-category-label {
 .rtl-sidebar .tags-ul {
     padding-right: 0;
 }
+
+/* ─── 15. RTL Blog Post Cards (Main Page & Blog List) ─────────────────────── */
+.rtl-card,
+[dir="rtl"].card,
+.card[dir="rtl"] {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+.rtl-card-body,
+.rtl-card .card-body,
+[dir="rtl"] .card-body,
+.card-body[dir="rtl"] {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+.rtl-card-title,
+.rtl-card .card-title,
+.rtl-card h5.card-title,
+.rtl-card-title h5,
+[dir="rtl"] .card-title,
+[dir="rtl"] h5.card-title {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif !important;
+    font-weight: 700 !important;
+    unicode-bidi: plaintext !important;
+    line-height: 1.5 !important;
+}
+
+.rtl-card-text,
+.rtl-card-text p,
+.rtl-card .card-text,
+.rtl-card .card-text p,
+[dir="rtl"] .card-text,
+[dir="rtl"] .card-text p {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif !important;
+    line-height: 1.8 !important;
+    unicode-bidi: plaintext !important;
+    font-size: 0.95rem;
+}
+
+.rtl-card-footer,
+.rtl-card .card-footer,
+.rtl-card .post-footer,
+[dir="rtl"] .card-footer,
+[dir="rtl"] .post-footer {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif !important;
+}
+
+.rtl-card-footer .float-start,
+.rtl-card .card-footer .float-start,
+.rtl-card .post-footer .float-start,
+[dir="rtl"] .card-footer .float-start,
+[dir="rtl"] .post-footer .float-start {
+    float: left !important;
+}
+
+.rtl-card-footer .float-end,
+.rtl-card .card-footer .float-end,
+.rtl-card .post-footer .float-end,
+[dir="rtl"] .card-footer .float-end,
+[dir="rtl"] .post-footer .float-end {
+    float: right !important;
+}
+
 
 
 

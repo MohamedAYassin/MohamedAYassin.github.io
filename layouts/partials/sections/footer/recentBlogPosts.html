@@ -1,0 +1,39 @@
+{{ $recentPostsPath := .Site.Params.footer.recentPosts.path | default "blogs" }}
+{{ $allPosts := where .Site.RegularPages "Section" $recentPostsPath }}
+{{ if and (gt (len $allPosts) 0) (.Site.Params.footer.recentPosts.enable | default false) }} 
+<div class="container py-3" id="recent-posts">
+    {{ $recentPostsCount := .Site.Params.footer.recentPosts.count | default 3 }}
+    {{ $recentPosts := $allPosts | first $recentPostsCount }}
+    <div class="h3 text-center text-secondary py-3">
+        {{ .Site.Params.footer.recentPosts.title | default "Recent Posts" }}
+    </div>
+    <div class="row justify-content-center">
+        {{ range $recentPosts }}
+        {{ $isRTL := or .Params.rtl (eq .Params.dir "rtl") (eq .Params.lang "ar") }}
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100{{ if $isRTL }} rtl-card{{ end }}"{{ if $isRTL }} dir="rtl"{{ end }}>
+                {{ if and (not (.Site.Params.footer.recentPosts.disableFeaturedImage | default false)) (.Params.image) }}
+                <div class="card-header">
+                    <a href="{{ .RelPermalink }}">
+                        <img src="{{ .Params.image }}" class="card-img-top" alt="{{ .Title }}">
+                    </a>
+                </div>
+                {{ end }}
+                <div class="card-body bg-transparent p-3 shadow-sm{{ if $isRTL }} rtl-card-body{{ end }}"{{ if $isRTL }} dir="rtl"{{ end }}>
+                    <a href="{{ .RelPermalink }}" class="primary-font card-title{{ if $isRTL }} rtl-card-title{{ end }}">
+                        <h5 class="card-title bg-transparent{{ if $isRTL }} rtl-card-title{{ end }}" title="{{ .Title }}">{{ .Title | truncate 50 }}</h5>
+                    </a>
+                    <div class="card-text secondary-font{{ if $isRTL }} rtl-card-text{{ end }}"{{ if $isRTL }} dir="rtl"{{ end }}>
+                        <p>{{ or .Description .Summary | truncate 300}}</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer{{ if $isRTL }} rtl-card-footer{{ end }}">
+                    <span class="{{ if $isRTL }}float-end{{ else }}float-start{{ end }}">{{ .Date.Format (.Site.Params.datesFormat.articleRecent | default "January 2, 2006") }}</span>
+                    <a href="{{ .RelPermalink }}" class="{{ if $isRTL }}float-start{{ else }}float-end{{ end }} btn btn-outline-info btn-sm">{{ if $isRTL }}اقرأ المقال{{ else }}{{ .Site.Params.terms.read | default "Read" }}{{ end }}</a>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
